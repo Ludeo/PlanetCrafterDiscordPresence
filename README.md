@@ -1,6 +1,6 @@
 # Planet Crafter Mods
-- [Discord Presence](##discord-presence)
-- [Terraformation Details Overlay](##terraformation-details-overlay)
+- [Discord Presence](#discord-presence)
+- [Terraformation Details Overlay](#terraformation-details-overlay)
 
 If you don't know how to install mods for Planet Crafter, follow the instructions [here](https://planet-crafter.fandom.com/wiki/Modding). You can find the dll for the mods on the [releases](https://github.com/Ludeo/PlanetCrafterDiscordPresence/releases) page.
 
