@@ -8,6 +8,8 @@ If you don't know how to install mods for Planet Crafter, follow the instruction
 This is a Discord Presence for Planet Crafter. It will show whether you are in the Main Menu, the Option Menu, the World Selection Menu or inside of a World as well as how long you are in the specific Menu.
 Additionally if you are inside of a world, it will show the world name, the terraformation stage and all the terraformation levels (Biomass, Oxygen, Heat, Pressure). The Presence gets updated every 15 seconds except when you switch the Menu, then it will instantly update the Presence.
 
+Make sure that you go into "Settings -> Activity Status" and enable "Display current activity as a status message". Otherwise it won't show up on your discord profile.
+
 ### Preview
 ![Main Menu](https://i.imgur.com/FISzATX.png) ![Option Menu](https://i.imgur.com/0y9X57H.png) ![World Selection Menu](https://i.imgur.com/JAiAjO9.png)
 
