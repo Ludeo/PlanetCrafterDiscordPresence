@@ -107,7 +107,15 @@ namespace DiscordPresence
 
                     activity.Assets.LargeText = text;
                     activity.Assets.SmallImage = "image_small";
-                    activity.Assets.SmallText = Readable.GetTerraformStageName(Managers.GetManager<TerraformStagesHandler>().GetCurrentGlobalStage());
+                    TerraformStagesHandler terraformStagesHandler = Managers.GetManager<TerraformStagesHandler>();
+                    if (terraformStagesHandler is null)
+                    {
+                        activity.Assets.SmallText = "N/A";
+                    } else
+                    {
+                        activity.Assets.SmallText = Readable.GetTerraformStageName(terraformStagesHandler.GetCurrentGlobalStage());
+                    }
+                    
                     break;
 
                 case SceneState.MainMenu:
