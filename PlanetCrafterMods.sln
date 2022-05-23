@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TerraformationDetailsOverla
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiscordPresence", "DiscordPresence\DiscordPresence.csproj", "{1C08F310-92DA-4320-B418-134D56F733A9}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModLoader", "ModLoader\ModLoader.csproj", "{F20D6668-7AC3-4603-AF7B-6E7FF65860A9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{1C08F310-92DA-4320-B418-134D56F733A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C08F310-92DA-4320-B418-134D56F733A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C08F310-92DA-4320-B418-134D56F733A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F20D6668-7AC3-4603-AF7B-6E7FF65860A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F20D6668-7AC3-4603-AF7B-6E7FF65860A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F20D6668-7AC3-4603-AF7B-6E7FF65860A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F20D6668-7AC3-4603-AF7B-6E7FF65860A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
