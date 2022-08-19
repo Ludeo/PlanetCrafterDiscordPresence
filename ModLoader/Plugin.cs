@@ -1,6 +1,7 @@
 ﻿using BepInEx;
 using BepInEx.Logging;
 using HarmonyLib;
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -44,7 +45,9 @@ namespace ModLoader
             TMP_FontAsset buttonFont = menuQuitButtonTextMesh.font;
 
             // ----------------------------
-            // Button
+            // Main Menu
+            #region Mod Loader Button
+            
             GameObject modLoaderObject = new("ButtonModLoader");
             modLoaderObject.transform.parent = canvasBase.transform;
             modLoaderObject.layer = LayerMask.NameToLayer("UI");
@@ -76,11 +79,63 @@ namespace ModLoader
             modLoaderObjectRectTransform.localPosition = new Vector3(-550, -341.5f, 0);
             modLoaderObjectRectTransform.localScale = new Vector3(1.7992f, 1.7992f, 1.7992f);
             modLoaderObjectRectTransform.sizeDelta = new Vector2(160, 30);
+            #endregion
 
             // ----------------------------
-            // UI after Button press
+            // Mod Loader Menu
             canvasModLoader.transform.parent = canvasesObject.transform;
             canvasModLoader.SetActive(false);
+
+            Canvas modLoaderCanvas = canvasModLoader.AddComponent<Canvas>();
+            modLoaderCanvas.renderMode = RenderMode.ScreenSpaceOverlay;
+
+            #region Mod Loader Panel
+            GameObject modLoaderPanel = new("Mod Loader Panel");
+            modLoaderPanel.transform.parent = canvasModLoader.transform;
+
+            Image modLoaderPanelImage = modLoaderPanel.AddComponent<Image>();
+            modLoaderPanelImage.transform.parent = modLoaderPanel.transform;
+            modLoaderPanelImage.color = Color.gray;
+
+            RectTransform modLoaderPanelTransform = modLoaderPanel.GetComponent<RectTransform>();
+            modLoaderPanelTransform.sizeDelta = new Vector2(1000, 600);
+            modLoaderPanelTransform.position = new Vector3(800, 500, 0);
+            #endregion
+
+            #region Main Menu Button
+            GameObject backToMainMenuObject = new("Back To Menu Button");
+            backToMainMenuObject.transform.parent = modLoaderPanel.transform;
+            backToMainMenuObject.layer = LayerMask.NameToLayer("UI");
+
+            Image backtoMainMenuImage = backToMainMenuObject.AddComponent<Image>();
+            backtoMainMenuImage.sprite = buttonSprite;
+
+            Button backToMainMenuButton = backToMainMenuObject.AddComponent<Button>();
+            backToMainMenuButton.onClick.AddListener(() =>
+            {
+                canvasBase.SetActive(true);
+                canvasOptions.SetActive(false);
+                canvasSaveFilesSelector.SetActive(false);
+                canvasNewsletter.SetActive(true);
+                canvasModLoader.SetActive(false);
+            });
+
+            GameObject backToMainMenuText = new("Text (TMP)");
+            backToMainMenuText.transform.parent = backToMainMenuObject.transform;
+            backToMainMenuText.transform.localScale = new Vector3(1, 1, 1);
+            backToMainMenuText.transform.localPosition = new Vector3(38, -12, 0);
+
+            TextMeshProUGUI backToMainMenuTextMesh = backToMainMenuText.AddComponent<TextMeshProUGUI>();
+            backToMainMenuTextMesh.text = "Back";
+            backToMainMenuTextMesh.font = buttonFont;
+            backToMainMenuTextMesh.fontSize = 16;
+
+            RectTransform backToMainMenuRectTransform = backToMainMenuObject.GetComponent<RectTransform>();
+            backToMainMenuRectTransform.localPosition = new Vector3(100, 100, 0);
+            backToMainMenuRectTransform.localScale = new Vector3(1.7992f, 1.7992f, 1.7992f);
+            backToMainMenuRectTransform.sizeDelta = new Vector2(160, 30);
+            #endregion
+
 
             // create panel like options menu
             // list plugins located in plugins folder

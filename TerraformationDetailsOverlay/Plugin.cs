@@ -171,7 +171,7 @@ namespace TerraformationDetailsOverlay
         }
 
         [HarmonyPostfix]
-        [HarmonyPatch(typeof(LiveDevTools), "ToggleUi")]
+        [HarmonyPatch(typeof(VisualsToggler), "ToggleUi")]
         static void ToggleUi(List<GameObject> ___handObjectsToHide)
         {
             bool active = !___handObjectsToHide[0].activeSelf;
